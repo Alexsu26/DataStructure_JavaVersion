@@ -1,44 +1,44 @@
 // mains single linked list
-public class SLList {
+public class SLList<Item> {
 
-    public static class IntNode {
-        public int item;
-        public IntNode next;
+    public static class IntNode<Item> {
+        public Item item;
+        public IntNode<Item> next;
 
-        public IntNode(int i, IntNode n) {
+        public IntNode(Item i, IntNode<Item> n) {
             item = i;
             next = n;
         }
     }
-    private IntNode sentinel;
+    private IntNode<Item> sentinel;
     private int size;
 
     public SLList() {
-        sentinel = new IntNode(0, null);
+        sentinel = new IntNode<>(null, null);
     }
 
-    public SLList(int x) {
-        sentinel = new IntNode(0, null);
-        sentinel.next = new IntNode(x, null);
-        sentinel.item = 1;
+    public SLList(Item x) {
+        sentinel = new IntNode<>(null, null);
+        sentinel.next = new IntNode<>(x, null);
+        size = 1;
     }
 
-    public void addFirst(int x) {
-        sentinel.next = new IntNode(x, sentinel.next);
-        sentinel.item ++;
+    public void addFirst(Item x) {
+        sentinel.next = new IntNode<>(x, sentinel.next);
+        size += 1;
     }
 
-    public int getFirst() {
+    public Item getFirst() {
         return sentinel.next.item;
     }
 
-    public void addLast(int x) {
-        IntNode p = sentinel;
+    public void addLast(Item x) {
+        IntNode<Item> p = sentinel;
         while (p.next != null) {
             p = p.next;
         }
-        p.next = new IntNode(x, null);
-        sentinel.item ++;
+        p.next = new IntNode<>(x, null);
+        size += 1;
     }
 
     /**
@@ -55,15 +55,15 @@ public class SLList {
      */
 
     public int size() {
-        return sentinel.item;
+        return size;
     }
 
     public static void main(String[] args) {
-        SLList s = new SLList();
+        SLList<Integer> s = new SLList<>();
         s.addFirst(5);
         s.addFirst(15);
         s.addLast(33);
-        IntNode temp = s.sentinel.next;
+        IntNode<Integer> temp = s.sentinel.next;
         while (temp != null) {
             System.out.println(temp.item);
             temp = temp.next;

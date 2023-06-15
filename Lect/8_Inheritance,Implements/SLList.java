@@ -96,5 +96,6 @@ public class SLList<MyType> implements List<MyType>{
             temp = temp.next;
         }
         System.out.println(s.get(0));
+        
     }
 }
