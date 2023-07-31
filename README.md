@@ -20,3 +20,16 @@ public static void switchX(class A, class B) {
 2. 实例可以访问静态变量和方法，同时也可访问实例变量和方法；   
 而类只能访问静态变量和方法
 3. 构造函数能够访问静态变量和实例变量
+
+## git相关
+> git status : 查看仓库状态
+> git add file.type : 打上时间戳
+> git commit -m “” ：提交
+> git log ：查看所有提交
+> cat file.type : 查看文件
+> cp file.type ./file.type : 复制文件到指定路径
+> git checkout logName ：回到指定时间
+> git checkout master ：回到当下
+> echo “String” >> file : 在文件末添加String 
+> echo "String" > file : 用String覆盖文件
+> git checkout logName -- fileName : 让文件恢复到指定时间
